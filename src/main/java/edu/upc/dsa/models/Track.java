@@ -7,8 +7,8 @@ public class Track {
     String id;
     String title;
     String singer;
-    static int lastId;
 
+    //Constructores
     public Track() {
         this.id = RandomUtils.getId();
     }
@@ -18,7 +18,7 @@ public class Track {
         this.setSinger(singer);
         this.setTitle(title);
     }
-
+    //Metodos
     public String getId() {
         return this.id;
     }
