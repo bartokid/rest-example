@@ -1,18 +1,22 @@
 package edu.upc.dsa;
 
-import edu.upc.dsa.models.Track;
-
+import edu.upc.dsa.models.*;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import org.apache.log4j.Logger;
 
 public class TracksManagerImpl implements TracksManager {
+
     private static TracksManager instance;
     protected List<Track> tracks;
+    protected HashMap<String,Album> albums;
+    protected HashMap<String,Author> authors;
     final static Logger logger = Logger.getLogger(TracksManagerImpl.class);
 
     private TracksManagerImpl() {
         this.tracks = new LinkedList<>();
+        this.albums = new HashMap<>();
+        this.authors = new HashMap<>();
     }
 
     public static TracksManager getInstance() {
