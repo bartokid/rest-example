@@ -24,6 +24,8 @@ public class TracksManagerImpl implements TracksManager {
         return instance;
     }
 
+    //tracks
+
     public int size() {
         int ret = this.tracks.size();
         logger.info("size " + ret);
@@ -92,5 +94,34 @@ public class TracksManagerImpl implements TracksManager {
         }
 
         return t;
+
     }
+
+    //Albums
+    @Override
+    public Album getAlbum(String id)  {
+        Album album = this.albums.get(id);
+        if (album != null){
+            logger.info(id + "album found");
+            return album;
+        }else{
+            logger.info("Album not found" + id);
+            return null;
+
+        }
+
+    }
+
+    //Authors
+    @Override
+    public Author getAuthor(String id){
+        Author author = this.authors.get(id);
+        if(author==null){
+            logger.info(id +" Author not found");
+        }else{
+            logger.info(id +"Author found");
+        }
+        return author;
+    }
+
 }
