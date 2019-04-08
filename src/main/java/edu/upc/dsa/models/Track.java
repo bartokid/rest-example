@@ -4,19 +4,21 @@ import edu.upc.dsa.util.RandomUtils;
 
 public class Track {
 
-    String id;
-    String title;
-    String singer;
+   private String id;
+   private String title;
+   private String singer; //podria ser private Author singer?? (consulta)
+   private String album; //podria ser private Album album?? (consulta)
 
     //Constructores
     public Track() {
         this.id = RandomUtils.getId();
     }
 
-    public Track(String title, String singer) {
+    public Track(String title, String singer, String album) {
         this();
         this.setSinger(singer);
         this.setTitle(title);
+        this.setAlbum(album);
     }
     //Metodos
     public String getId() {
@@ -43,6 +45,10 @@ public class Track {
     public void setSinger(String singer) {
         this.singer = singer;
     }
+
+    public void setAlbum(String album){ this.album = album; }
+
+    public String getAlbum() {  return album;   }
 
     @Override
     public String toString() {
