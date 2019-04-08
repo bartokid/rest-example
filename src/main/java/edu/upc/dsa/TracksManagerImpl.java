@@ -94,9 +94,12 @@ public class TracksManagerImpl implements TracksManager {
         }
 
         return t;
-
     }
 
+    public List<Album> getAlbums(){
+        ArrayList<Album> albumes = new ArrayList<>(this.albums.values());
+        return albumes;
+    }
     //Albums
     @Override
     public Album getAlbum(String id)  {
@@ -112,6 +115,16 @@ public class TracksManagerImpl implements TracksManager {
 
     }
 
+    @Override
+    public void updateAlbum(Album album) {
+         //completar
+    }
+
+    @Override
+    public void deleteAlbum(String albumId) {
+        //completar
+    }
+
     //Authors
     @Override
     public Author getAuthor(String id){
@@ -124,4 +137,20 @@ public class TracksManagerImpl implements TracksManager {
         return author;
     }
 
+    @Override
+    public void updateAuthor(Author author) {
+        //completar
+    }
+
+    @Override
+    public List<Author> getAuthors() {
+        //completar
+        List<Author> aut= new ArrayList<Author>(this.authors.size());
+        return aut;
+    }
+
+    @Override
+    public void deleteAuthor(String authorId) {
+        //completar
+    }
 }
